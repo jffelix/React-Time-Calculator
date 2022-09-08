@@ -1,4 +1,4 @@
-import logo from './logo.svg';
+// import logo from './logo.svg';
 import './App.css';
 import React, { useState, useEffect } from "react";
 
@@ -32,7 +32,7 @@ function App() {
           <input/>
         </div>
         <p></p>
-        <div>
+        <div className="addTime">
           <button>Add Time</button>
         </div>
       </div>
