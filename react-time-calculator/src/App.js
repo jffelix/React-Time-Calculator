@@ -17,13 +17,24 @@ function App() {
 
   return (
     <div className="App">
-      <h1>Hello from App Component!</h1>
+      <h1>React Time Calculator</h1>
       <div className="currentTime">
         <h2>Current Time</h2>
         <h4>{currentTime}</h4>
       </div>
       <div className="timeInput">
-        <input/>
+        <div className="hoursInput">
+          <h4>Hours</h4>
+          <input/>
+        </div>
+        <div className="minutesInput">
+          <h4>Minutes</h4>
+          <input/>
+        </div>
+        <p></p>
+        <div>
+          <button>Add Time</button>
+        </div>
       </div>
     </div>
   );
