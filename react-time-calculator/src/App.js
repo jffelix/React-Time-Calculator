@@ -1,10 +1,30 @@
 import logo from './logo.svg';
 import './App.css';
+import React, { useState, useEffect } from "react";
 
 function App() {
+
+  useEffect(() => {
+    generateCurrentTime();
+  }, [])
+
+  const [ currentTime, setCurrentTime ] = useState("");
+
+  function generateCurrentTime () {
+    const timeNow = new Date().toISOString();
+    setCurrentTime(timeNow);
+  }
+
   return (
     <div className="App">
-      Hello from App Component!
+      <h1>Hello from App Component!</h1>
+      <div className="currentTime">
+        <h2>Current Time</h2>
+        <h4>{currentTime}</h4>
+      </div>
+      <div className="timeInput">
+        <input/>
+      </div>
     </div>
   );
 }
