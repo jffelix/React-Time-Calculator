@@ -24,6 +24,11 @@ function App() {
 
   function submitTime(e) {
       e.preventDefault();
+
+      // convert time to only minutes
+        // add submitted time
+          // convert result back into hours:minutes
+
       console.log("hours: ", hoursInput);
       console.log("minutes: ", minutesInput);
   }
