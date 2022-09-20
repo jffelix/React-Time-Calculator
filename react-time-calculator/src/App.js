@@ -15,7 +15,7 @@ function App() {
   const [ minutesInput, setMinutesInput ] = useState("");
 
   function generateCurrentTime () {
-    const timeNow = moment().format('h:mm:ss a');
+    const timeNow = moment().format('h:mm a');
     console.log("timeNow: ", timeNow);
 
     // will eventually need to update time every minute
