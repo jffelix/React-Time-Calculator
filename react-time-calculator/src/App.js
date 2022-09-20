@@ -31,6 +31,9 @@ function App() {
 
       console.log("hours: ", hoursInput);
       console.log("minutes: ", minutesInput);
+
+      setHoursInput("");
+      setMinutesInput("");
   }
 
   return (
