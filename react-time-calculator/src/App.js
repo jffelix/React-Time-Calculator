@@ -18,6 +18,7 @@ function App() {
     const timeNow = moment().format('h:mm:ss a');
     console.log("timeNow: ", timeNow);
 
+    // will eventually need to update time every minute
     setCurrentTime(timeNow);
   }
 
