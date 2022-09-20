@@ -1,6 +1,7 @@
 // import logo from './logo.svg';
 import './App.css';
 import React, { useState, useEffect } from "react";
+import EntryList from "./sub-components/EntryList.js";
 
 function App() {
 
@@ -30,6 +31,10 @@ function App() {
         <div className="minutesInput">
           <h4>Minutes</h4>
           <input/>
+        </div>
+        <p></p>
+        <div className="entryList">
+          <EntryList />
         </div>
         <p></p>
         <div className="addTime">
