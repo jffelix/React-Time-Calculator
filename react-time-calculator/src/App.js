@@ -1,7 +1,8 @@
 // import logo from './logo.svg';
 import './App.css';
 import React, { useState, useEffect } from "react";
-import EntryList from "./sub-components/EntryList.js";
+// import EntryList from "./sub-components/EntryList.js";
+import moment from "moment";
 
 function App() {
 
@@ -14,7 +15,9 @@ function App() {
   const [ minutesInput, setMinutesInput ] = useState("");
 
   function generateCurrentTime () {
-    const timeNow = new Date().toISOString();
+    const timeNow = moment().format('h:mm:ss a');
+    console.log("timeNow: ", timeNow);
+
     setCurrentTime(timeNow);
   }
 
@@ -42,9 +45,9 @@ function App() {
               <input onChange={(e) => setMinutesInput(e.target.value)} value={minutesInput}/>
             </div>
             <p></p>
-            <div className="entryList">
+            {/* <div className="entryList">
               <EntryList />
-            </div>
+            </div> */}
             <p></p>
             <div className="addTime">
               <button>Add Time</button>
