@@ -22,8 +22,20 @@ function App() {
     setCurrentTime(timeNow);
   }
 
+  function convertHoursToMinutes() {
+    console.log("Hello from covertHoursToMinutes!");
+  }
+
   function submitTime(e) {
       e.preventDefault();
+
+      const getHours = new Date().getHours();
+      console.log("getHours: ", getHours);
+
+      const getMinutes = new Date().getMinutes();
+      console.log("getMinutes: ", getMinutes);
+
+      convertHoursToMinutes();
 
       // convert time to only minutes
         // add submitted time
