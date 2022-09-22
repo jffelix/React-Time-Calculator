@@ -33,10 +33,20 @@ function App() {
 
   function getCalculatedTime(totalMinutes) {
 
-    const timeHours = Math.floor(totalMinutes / 60);
-    const timeMinutes = totalMinutes % 60;
+    // let allows variable to be reassigned
+      // unable to substract if const
+    let timeHours = Math.floor(totalMinutes / 60);
+    console.log("timeHours: ", timeHours);
 
-    console.log("newTime: ", timeHours + ":" + timeMinutes);
+    let timeMinutes = totalMinutes % 60;
+    console.log("timeMinutes: ", timeMinutes);
+
+    if (timeHours >= 24) {
+      timeHours -= 24;
+    }
+
+    const newTime = timeHours + ":" + timeMinutes;
+    return newTime;
   }
 
   function submitTime(e) {
@@ -57,7 +67,7 @@ function App() {
       const totalCalculatedMinutes = addTotalMinutes(totalCurrentMinutes, totalInputMinutes);
       console.log("totalCalculatedMinutes: ", totalCalculatedMinutes);
 
-      getCalculatedTime(totalCalculatedMinutes);
+      console.log("newTime: ", getCalculatedTime(totalCalculatedMinutes));
 
       setHoursInput("");
       setMinutesInput("");
