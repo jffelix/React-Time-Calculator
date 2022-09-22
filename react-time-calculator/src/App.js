@@ -26,6 +26,11 @@ function App() {
     return hours * 60;
   }
 
+  function addTotalMinutes(currentMinutes, inputMinutes) {
+    const addedMinutes = currentMinutes + inputMinutes;
+    return addedMinutes;
+  }
+
   function submitTime(e) {
       e.preventDefault();
       
@@ -34,11 +39,14 @@ function App() {
       // convert result back into hours:minutes
       const getHours = new Date().getHours();
       const getMinutes = new Date().getMinutes();
-      const totalMinutes = getMinutes + convertHoursToMinutes(getHours);
-      console.log("totalMinutes: ", totalMinutes);
+      const totalCurrentMinutes = getMinutes + convertHoursToMinutes(getHours);
+      console.log("totalCurrentMinutes: ", totalCurrentMinutes);
       
       const totalInputMinutes = (Number(hoursInput) * 60) + Number(minutesInput);
       console.log("totalInputMinutes: ", totalInputMinutes);
+
+      const totalCalculatedMinutes = addTotalMinutes(totalCurrentMinutes, totalInputMinutes);
+      console.log("totalCalculatedMinutes: ", totalCalculatedMinutes);
 
       setHoursInput("");
       setMinutesInput("");
