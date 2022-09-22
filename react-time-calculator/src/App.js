@@ -41,8 +41,9 @@ function App() {
     let timeMinutes = totalMinutes % 60;
     console.log("timeMinutes: ", timeMinutes);
 
+    // use modulo operator for time over 24 hours
     if (timeHours >= 24) {
-      timeHours -= 24;
+      timeHours %= 24;
     }
 
     const newTime = timeHours + ":" + timeMinutes;
