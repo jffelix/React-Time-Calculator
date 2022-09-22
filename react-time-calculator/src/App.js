@@ -22,27 +22,23 @@ function App() {
     setCurrentTime(timeNow);
   }
 
-  function convertHoursToMinutes() {
-    console.log("Hello from covertHoursToMinutes!");
+  function convertHoursToMinutes(hours) {
+    return hours * 60;
   }
 
   function submitTime(e) {
       e.preventDefault();
-
-      const getHours = new Date().getHours();
-      console.log("getHours: ", getHours);
-
-      const getMinutes = new Date().getMinutes();
-      console.log("getMinutes: ", getMinutes);
-
-      convertHoursToMinutes();
-
+      
       // convert time to only minutes
-        // add submitted time
-          // convert result back into hours:minutes
-
-      console.log("hours: ", hoursInput);
-      console.log("minutes: ", minutesInput);
+      // add submitted time
+      // convert result back into hours:minutes
+      const getHours = new Date().getHours();
+      const getMinutes = new Date().getMinutes();
+      const totalMinutes = getMinutes + convertHoursToMinutes(getHours);
+      console.log("totalMinutes: ", totalMinutes);
+      
+      const totalInputMinutes = (Number(hoursInput) * 60) + Number(minutesInput);
+      console.log("totalInputMinutes: ", totalInputMinutes);
 
       setHoursInput("");
       setMinutesInput("");
