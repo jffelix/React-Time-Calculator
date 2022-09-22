@@ -31,12 +31,21 @@ function App() {
     return addedMinutes;
   }
 
+  function getCalculatedTime(totalMinutes) {
+
+    const timeHours = Math.floor(totalMinutes / 60);
+    const timeMinutes = totalMinutes % 60;
+
+    console.log("newTime: ", timeHours + ":" + timeMinutes);
+  }
+
   function submitTime(e) {
       e.preventDefault();
       
       // convert time to only minutes
-      // add submitted time
-      // convert result back into hours:minutes
+        // add submitted time
+          // convert result back into hours:minutes
+
       const getHours = new Date().getHours();
       const getMinutes = new Date().getMinutes();
       const totalCurrentMinutes = getMinutes + convertHoursToMinutes(getHours);
@@ -47,6 +56,8 @@ function App() {
 
       const totalCalculatedMinutes = addTotalMinutes(totalCurrentMinutes, totalInputMinutes);
       console.log("totalCalculatedMinutes: ", totalCalculatedMinutes);
+
+      getCalculatedTime(totalCalculatedMinutes);
 
       setHoursInput("");
       setMinutesInput("");
