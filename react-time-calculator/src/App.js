@@ -70,7 +70,7 @@ function App() {
       console.log("totalCalculatedMinutes: ", totalCalculatedMinutes);
 
       
-      setNewTimeDisplay(getCalculatedTime(totalCalculatedMinutes));
+      setNewTimeDisplay(getCalculatedTime(totalCalculatedMinutes).toString());
       console.log("newTimeDisplay: ", newTimeDisplay);
 
       // setHoursInput("");
@@ -106,7 +106,7 @@ function App() {
               <h3>The future time would be: </h3>
               {
                 !newTimeDisplay ? null :
-                <div>Time submitted</div>
+                <div>{newTimeDisplay}</div>
               }
             </div>
           </div>
