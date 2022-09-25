@@ -54,10 +54,6 @@ function App() {
 
   function submitTime(e) {
       e.preventDefault();
-      
-      // convert time to only minutes
-        // add submitted time
-          // convert result back into hours:minutes
 
       const getHours = new Date().getHours();
       const getMinutes = new Date().getMinutes();
@@ -70,7 +66,6 @@ function App() {
       const totalCalculatedMinutes = addTotalMinutes(totalCurrentMinutes, totalInputMinutes);
       console.log("totalCalculatedMinutes: ", totalCalculatedMinutes);
 
-      
       setNewTimeDisplay(getCalculatedTime(totalCalculatedMinutes).toString());
       console.log("newTimeDisplay: ", newTimeDisplay);
 
@@ -111,7 +106,7 @@ function App() {
             <div className="newTime">
               <h3>The future time would be: </h3>
               {
-                displayResult ? null :
+                !displayResult ? null :
                 <div>
                   <h2>{newTimeDisplay}</h2>
                   <button onClick={clearTimeResult}>Clear</button>
