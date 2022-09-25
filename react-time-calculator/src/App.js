@@ -87,8 +87,8 @@ function App() {
     <div className="App">
       <h1>React Time Calculator</h1>
       <div className="currentTime">
-          <h2>Current Time</h2>
-          <h4>{currentTime}</h4>
+          <h3>Current Time</h3>
+          <h2>{currentTime}</h2>
       </div>
       <form onSubmit={submitTime}>
           <div className="timeInput">
@@ -111,7 +111,7 @@ function App() {
             <div className="newTime">
               <h3>The future time would be: </h3>
               {
-                !displayResult ? null :
+                displayResult ? null :
                 <div>
                   <h2>{newTimeDisplay}</h2>
                   <button onClick={clearTimeResult}>Clear</button>
