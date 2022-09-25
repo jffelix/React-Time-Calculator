@@ -13,6 +13,7 @@ function App() {
   const [ currentTime, setCurrentTime ] = useState("");
   const [ hoursInput, setHoursInput ] = useState("");
   const [ minutesInput, setMinutesInput ] = useState("");
+  const [ displayResult, setDisplayResult ] = useState(false);
   const [ newTimeDisplay, setNewTimeDisplay ] = useState("");
 
   function generateCurrentTime () {
@@ -73,8 +74,13 @@ function App() {
       setNewTimeDisplay(getCalculatedTime(totalCalculatedMinutes).toString());
       console.log("newTimeDisplay: ", newTimeDisplay);
 
-      // setHoursInput("");
-      // setMinutesInput("");
+      setDisplayResult(true);
+  }
+
+  function clearTimeResult() {
+      setHoursInput("");
+      setMinutesInput("");
+      setDisplayResult(false);
   }
 
   return (
@@ -105,8 +111,11 @@ function App() {
             <div className="newTime">
               <h3>The future time would be: </h3>
               {
-                !newTimeDisplay ? null :
-                <div>{newTimeDisplay}</div>
+                !displayResult ? null :
+                <div>
+                  <h2>{newTimeDisplay}</h2>
+                  <button onClick={clearTimeResult}>Clear</button>
+                </div>
               }
             </div>
           </div>
