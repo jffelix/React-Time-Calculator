@@ -49,12 +49,24 @@ function App() {
     }
 
     if (timeHours < 12) {
-      const newTime = timeHours + ":" + timeMinutes + " am";
-      return newTime;
+      if (timeMinutes < 10) {
+        const newTime = timeHours + ":0" + timeMinutes + " am";
+        return newTime;        
 
+      } else {
+        const newTime = timeHours + ":" + timeMinutes + " am";
+        return newTime;
+      }
     } else {
-      const newTime = (timeHours - 12) + ":" + timeMinutes + " pm";
-      return newTime;
+
+      if (timeMinutes < 10) {
+        const newTime = (timeHours - 12) + ":0" + timeMinutes + " pm";
+        return newTime;
+
+      } else {
+        const newTime = (timeHours - 12) + ":" + timeMinutes + " pm";
+        return newTime;
+      }
     }
   }
 
