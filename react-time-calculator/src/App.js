@@ -48,8 +48,14 @@ function App() {
       timeHours %= 24;
     }
 
-    const newTime = timeHours + ":" + timeMinutes;
-    return newTime;
+    if (timeHours < 12) {
+      const newTime = timeHours + ":" + timeMinutes + " am";
+      return newTime;
+
+    } else {
+      const newTime = (timeHours - 12) + ":" + timeMinutes + " pm";
+      return newTime;
+    }
   }
 
   function submitTime(e) {
